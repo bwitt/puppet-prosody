@@ -1,0 +1,5 @@
+---
+# options for ubuntu resolute (prosody 13)
+
+# remove use_libevent parameter
+prosody::use_libevent: ~
