@@ -18,6 +18,13 @@ describe 'prosody' do
         it { is_expected.to contain_file('/etc/prosody/conf.d').with(ensure: 'directory') }
       end
 
+      if os_facts[:os]['name'] == 'Debian' && os_facts[:os]['release']['major'] == '13'
+        context 'with daemonize undef' do
+          it { is_expected.to contain_file('/etc/prosody/prosody.cfg.lua').without_content(%r{^daemonize}) }
+          it { is_expected.not_to contain_service('prosody') }
+        end
+      end
+
       context 'with daemonize => true' do
         let(:params) { { daemonize: true } }
 

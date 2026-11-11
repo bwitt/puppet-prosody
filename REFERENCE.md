@@ -32,6 +32,7 @@ The following parameters are available in the `prosody` class:
 
 * [`use_libevent`](#-prosody--use_libevent)
 * [`daemonize`](#-prosody--daemonize)
+* [`manage_service`](#-prosody--manage_service)
 * [`admins`](#-prosody--admins)
 * [`allow_registration`](#-prosody--allow_registration)
 * [`authentication`](#-prosody--authentication)
@@ -72,7 +73,6 @@ The following parameters are available in the `prosody` class:
 * [`ssl_cert`](#-prosody--ssl_cert)
 * [`ssl_key`](#-prosody--ssl_key)
 * [`ssl_protocol`](#-prosody--ssl_protocol)
-* [`manage_service`](#-prosody--manage_service)
 
 ##### <a name="-prosody--use_libevent"></a>`use_libevent`
 
@@ -92,6 +92,15 @@ if the server should be sent to background or not
 deprecated since prosody version 0.12
 
 Default value: `true`
+
+##### <a name="-prosody--manage_service"></a>`manage_service`
+
+Data type: `Optional[Boolean]`
+
+if the service should be managed
+defaults to daemonize, or false if daemonize is undef
+
+Default value: `undef`
 
 ##### <a name="-prosody--admins"></a>`admins`
 
@@ -408,14 +417,6 @@ Default value: `undef`
 ##### <a name="-prosody--ssl_protocol"></a>`ssl_protocol`
 
 Data type: `Optional[String]`
-
-
-
-Default value: `undef`
-
-##### <a name="-prosody--manage_service"></a>`manage_service`
-
-Data type: `Optional[Boolean]`
 
 
 

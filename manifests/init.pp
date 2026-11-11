@@ -9,6 +9,10 @@
 #   if the server should be sent to background or not
 #   deprecated since prosody version 0.12
 #
+# @param manage_service
+#   if the service should be managed
+#   defaults to daemonize, or false if daemonize is undef
+#
 class prosody (
   Array[String] $admins,
   Boolean $allow_registration,
